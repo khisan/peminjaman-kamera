@@ -64,7 +64,8 @@ include('koneksi.php');
 						<td class="kol-pinjam">
 					<h4>Harga Sewa</h4>
 					<P>Rp.<?php echo number_format($data['harga_kamera'],0, ",", ".")?> / 1 Hari</P>
-					<button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Pinjam</button>
+					<button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Pinjam
+          </button>
 					</div>
 				</div>
 			</div>
@@ -120,8 +121,8 @@ include('koneksi.php');
             <div class="form-group">
                 <label class="col-md-4 control-label">Harga Kamera</label>
                 <div class="col-md-8">
-                    <input type="text" class="form-control" name="harga_kamera" readonly="readonly" placeholder="Auto Number Tidak Perlu Di isi!" value="<?php echo $data ['harga_kamera'] ?>"></div>
-                    <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
+                    <input type="text" class="form-control" name="harga_kamera" readonly="readonly" value="<?php echo $data ['harga_kamera'] ?>"></div>
+                     <input type="hidden" name="id" value="<?php echo $_POST['id']; ?>">
             </div>
             <div class="modal-footer">
         		<input type="submit" class="btn btn-danger" name="" value="Batal" data-dismiss="modal">
@@ -134,12 +135,12 @@ include('koneksi.php');
              $tgl_selesai = $_POST['tgl_selesai'];
              $selisih = ((abs(strtotime ($tgl_mulai) - strtotime ($tgl_selesai)))/(60*60*24)) + 1;
              $total_biaya = $selisih * $_POST['harga_kamera'];
-        	 $sql = $koneksi->query("INSERT INTO data_peminjaman(id_peminjam, nama, kontak, no_identitas, tgl_peminjaman, tgl_selesai,  total_biaya)VALUES(null, '$_POST[nama]', '$_POST[kontak]', '$_POST[no_identitas]', '$_POST[tgl_peminjaman]', '$_POST[tgl_selesai]', $total_biaya)"); 
+        	   $sql = $koneksi->query("INSERT INTO data_peminjaman(id_peminjam, nama, kontak, no_identitas, tgl_peminjaman, tgl_selesai,  total_biaya)VALUES(null, '$_POST[nama]', '$_POST[kontak]', '$_POST[no_identitas]', '$_POST[tgl_peminjaman]', '$_POST[tgl_selesai]', $total_biaya)"); 
              if (isset($sql)) {
-             	$ambil2 = $koneksi->query("SELECT * FROM kamera WHERE id_kamera='".$_POST['id']."'");
-             	$tes = mysqli_fetch_array($ambil2);
+             	$ambil2 = $koneksi->query("SELECT * FROM kamera WHERE id_kamera='".$_GET['id']."'");
+             	$tes = $ambil2->fetch_array();
              	$stock = $tes['stock_kamera'] - 1;
-             	$sql1 = $koneksi->query("UPDATE kamera SET stock_kamera='$stock' WHERE id_kamera='".$_POST['id']."'");
+             	$sql1 = $koneksi->query("UPDATE kamera SET stock_kamera='$stock' WHERE id_kamera='".$_GET['id']."'");
              	echo "<script>location='detail-transaksi.php'</script>"; 
              }
 		}

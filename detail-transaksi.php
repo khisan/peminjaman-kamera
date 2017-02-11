@@ -1,6 +1,5 @@
 <?php include('header.php');
       include ('koneksi.php');
-
     $ambil = $koneksi->query("SELECT * FROM data_peminjaman ORDER BY id_peminjam DESC LIMIT 1");
     $data = $ambil->fetch_assoc();
 ?>
