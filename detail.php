@@ -64,8 +64,16 @@ include('koneksi.php');
 						<td class="kol-pinjam">
 					<h4>Harga Sewa</h4>
 					<P>Rp.<?php echo number_format($data['harga_kamera'],0, ",", ".")?> / 1 Hari</P>
-					<button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Pinjam
-          </button>
+          <!-- Cek Stock -->
+          <?php
+          $ambil3 = $koneksi->query("SELECT * FROM kamera WHERE id_kamera='$_GET[id]'");
+          $cek1 = $ambil3->fetch_array();
+          $cekstock = $cek1['stock_kamera'];
+            if ($cekstock == '0'){
+                echo "<div class='alert alert-info'>Maaf Stock Habis</div>";
+            }
+          ?>
+					<button type="button" name="pinjam" <?php if ($cekstock == '0'){ ?> disabled <?php   } ?> class="btn btn-success" data-toggle="modal" data-target="#myModal">Pinjam</button>
 					</div>
 				</div>
 			</div>
@@ -137,10 +145,10 @@ include('koneksi.php');
              $total_biaya = $selisih * $_POST['harga_kamera'];
         	   $sql = $koneksi->query("INSERT INTO data_peminjaman(id_peminjam, nama, kontak, no_identitas, tgl_peminjaman, tgl_selesai,  total_biaya)VALUES(null, '$_POST[nama]', '$_POST[kontak]', '$_POST[no_identitas]', '$_POST[tgl_peminjaman]', '$_POST[tgl_selesai]', $total_biaya)"); 
              if (isset($sql)) {
-             	$ambil2 = $koneksi->query("SELECT * FROM kamera WHERE id_kamera='".$_GET['id']."'");
+             	$ambil2 = $koneksi->query("SELECT * FROM kamera WHERE id_kamera='$_GET[id]'");
              	$tes = $ambil2->fetch_array();
              	$stock = $tes['stock_kamera'] - 1;
-             	$sql1 = $koneksi->query("UPDATE kamera SET stock_kamera='$stock' WHERE id_kamera='".$_GET['id']."'");
+             	$sql1 = $koneksi->query("UPDATE kamera SET stock_kamera='$stock' WHERE id_kamera='$_GET[id]'");
              	echo "<script>location='detail-transaksi.php'</script>"; 
              }
 		}

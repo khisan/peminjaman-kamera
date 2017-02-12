@@ -94,7 +94,7 @@
 		}
 	.footer-bottom{
 		background-color: #000;
- 		padding: 10px 0px;
+ 		padding: 15px 0px;
 	}
 	ul.selebihnya{
 		margin-top: 30px;

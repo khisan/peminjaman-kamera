@@ -46,9 +46,9 @@
 </footer>
 <div class="footer-bottom">
 	<center>
-	<h4>
+	
 	<p>
-		 © 2016 TA . All Rights Reserved | Design by XII-RPL</h4>
+		 © 2016 TA . All Rights Reserved | Design by XII-RPL
 	</div>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
