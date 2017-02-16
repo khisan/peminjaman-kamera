@@ -1,6 +1,5 @@
 <style type="text/css">
 	.about-us, .address{
-		font-family: "insconsolata";
 		font-size: 15px;
 	}
 </style>
@@ -9,18 +8,18 @@
 	<div class="row">
 		<div class="col-md-3">
 			<ul class="selebihnya">
-				<li><a href="kontak.php"><h4>Kontak</h4></a>
+				<li><a href="kontak.php"><h4 class="judul-footer">Kontak</h4></a>
 				</li>
 				<br>
-				<li><a href=""><h4>Tata Cara Peminjaman</h4></a>
+				<li><a href="cara-pinjam.php"><h4 class="judul-footer">Syarat & Cara Pinjam</h4></a>
 				</li>
 			</ul>
 		</div>
 		<div class="col-md-3">
 			<ul class="about-us">
 				<center>
-				<h3>Tentang Kami</h3>
-				<p>
+				<h3 class="judul-footer">Tentang Kami</h3>
+				<p class="isi-footer">
 					 Kami merupakan supplier peminjaman kamera khusus Action Camera dan Dslr Camera yang berbasis di Kota Malang dan sekitarnya dengan harga yang terjangkau.
 				</p>
 			</ul>
@@ -28,15 +27,15 @@
 		<div class="col-md-3">
 			<ul class="address">
 				<center>
-				<h3>Alamat Kami</h3>
-				<p>
+				<h3 class="judul-footer">Alamat Kami</h3>
+				<p class="isi-footer">
 					Jl. Buk Kemanten, Capang, Purwodadi, Pasuruan, Jawa Timur 67163
 				</p>
 			</ul>
 		</div>
 		<div class="col-md-3">
 			<center>
-			<h3>Ikuti Kami</h3>
+			<h3 class="judul-footer">Ikuti Kami</h3>
 			<p class="follow">
 				<a href=""><i class="fa fa-facebook-official fa-4x"></i></a><a href=""><i class="fa fa-twitter fa-4x"></i></a>
 			</p>
@@ -47,7 +46,7 @@
 <div class="footer-bottom">
 	<center>
 	
-	<p>
+	<p class="kaki">
 		 © 2016 TA . All Rights Reserved | Design by XII-RPL
 	</div>
 	<script type="text/javascript" src="js/jquery.min.js"></script>

@@ -26,14 +26,15 @@ if (!isset($_SESSION['admin']))
 	</form>
 	<?php
 				 
-                    $ambil="SELECT * FROM  kamera";
-                    if(isset($_POST['cari'])){
-	               $cari=$_POST['cari'];
-	               $ambil="SELECT * FROM  kamera 
-	               where merk_kamera like '%$cari%'
-	               or tipe_kamera like '%$cari%'  ";
-                    }
-                   $tampil=$koneksi->query($ambil);
+           $ambil="SELECT * FROM  kamera";
+            if(isset($_POST['cari']))
+            {
+	         $cari=$_POST['cari'];
+	         $ambil="SELECT * FROM  kamera 
+	         where merk_kamera like '%$cari%'
+	         or tipe_kamera like '%$cari%'  ";
+            }
+           $tampil=$koneksi->query($ambil);
     ?>
 </div>
 <div class="col-lg-12" style="margin-top: 10px;">

@@ -137,20 +137,23 @@ include('koneksi.php');
         		<input type="submit" class="btn btn-primary" name="kirim" value="Kirim">
         	</div>
         </form>
-		<?php if (isset($_POST['kirim'])) 
+		<?php 
+    
+    if (isset($_POST['kirim'])) 
 		{ 
 			 $tgl_mulai = $_POST['tgl_peminjaman'];
-             $tgl_selesai = $_POST['tgl_selesai'];
-             $selisih = ((abs(strtotime ($tgl_mulai) - strtotime ($tgl_selesai)))/(60*60*24)) + 1;
-             $total_biaya = $selisih * $_POST['harga_kamera'];
-        	   $sql = $koneksi->query("INSERT INTO data_peminjaman(id_peminjam, nama, kontak, no_identitas, tgl_peminjaman, tgl_selesai,  total_biaya)VALUES(null, '$_POST[nama]', '$_POST[kontak]', '$_POST[no_identitas]', '$_POST[tgl_peminjaman]', '$_POST[tgl_selesai]', $total_biaya)"); 
-             if (isset($sql)) {
-             	$ambil2 = $koneksi->query("SELECT * FROM kamera WHERE id_kamera='$_GET[id]'");
-             	$tes = $ambil2->fetch_array();
-             	$stock = $tes['stock_kamera'] - 1;
-             	$sql1 = $koneksi->query("UPDATE kamera SET stock_kamera='$stock' WHERE id_kamera='$_GET[id]'");
-             	echo "<script>location='detail-transaksi.php'</script>"; 
-             }
+       $tgl_selesai = $_POST['tgl_selesai'];
+       $selisih = ((abs(strtotime ($tgl_mulai) - strtotime ($tgl_selesai)))/(60*60*24)) + 1;
+       $total_biaya = $selisih * $_POST['harga_kamera'];
+       $sql = $koneksi->query("INSERT INTO data_peminjaman(id_peminjam, nama, kontak, no_identitas, tgl_peminjaman, tgl_selesai,  total_biaya)VALUES(null, '$_POST[nama]', '$_POST[kontak]', '$_POST[no_identitas]', '$_POST[tgl_peminjaman]', '$_POST[tgl_selesai]', $total_biaya)"); 
+            
+               if (isset($sql)) {
+               	$ambil2 = $koneksi->query("SELECT * FROM kamera WHERE id_kamera='$_GET[id]'");
+               	$tes = $ambil2->fetch_array();
+               	$stock = $tes['stock_kamera'] - 1;
+               	$sql1 = $koneksi->query("UPDATE kamera SET stock_kamera='$stock' WHERE id_kamera='$_GET[id]'");
+               	echo "<script>location='detail-transaksi.php'</script>"; 
+               }  
 		}
 
 		?>

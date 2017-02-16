@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 <title>TA</title>
 <!-- Bootstrap -->
@@ -11,12 +11,9 @@
 <link rel="stylesheet" type="text/css" href="css/unslider.css">
 <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
 <style type="text/css">
-	@font-face{
-		font-family: "adam"
-		src: url("");
-	}
 	body {
 		background-color: whitesmoke;
+		font-family: "calibri";
 		
 	}
 	.navbar-default{
@@ -25,6 +22,7 @@
  		border-radius: 0px;
  		border: none;
  		background-image: url("img/body2.jpg");
+ 		border-bottom: 1px solid #fff;
 	}
 	.gambar-produk{
 		max-height: 300px;
@@ -94,7 +92,14 @@
 		}
 	.footer-bottom{
 		background-color: #000;
- 		padding: 15px 0px;
+ 		padding: 10px 0px;
+	}
+	h4,h3.judul-footer{
+		font-family: "inconsolata";
+	}
+	p.isi-footer{
+		font-family: "inconsolata";
+		font-size: 14px;
 	}
 	ul.selebihnya{
 		margin-top: 30px;
@@ -102,6 +107,14 @@
 	}
 	.kontak{
 		margin-top: 50px;
+	}
+	.cara p{
+		font-family: "open sans";
+		text-align: justify-all;
+		font-size: 13px;
+	}
+	.kaki{
+		margin: 0px;
 	}
 </style>
 </head>
