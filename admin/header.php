@@ -64,19 +64,35 @@
 				<i class="fa fa-user fa-5x"></i>
 			</li>
 			<li style="border-top: 1px solid #DCDCDC; border-bottom: 1px solid #DCDCDC;">
-				<a href="dashboard.php"><i class="fa fa-md fa-dashboard"></i> Dashboard</a>
+				<a href="dashboard.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
 			</li>
 			<li style="border-bottom: 1px solid #DCDCDC;">
-				<a href="data-kamera.php"><i class="fa fa-md fa-camera"></i> Data Kamera</a>
+            	<a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-camera"></i> Kamera <i class="fa fa-fw fa-caret-down"></i></a>
+            		<ul id="demo" class="collapse">
+                        <li style="border-top: 1px solid #DCDCDC">
+                            <a href="data-kamera.php ?>"><i class="fa fa-fw fa-archive"></i> Data Kamera</a>
+                        </li>
+                        <li style="border-top: 1px solid #DCDCDC; border-bottom: 1px solid #DCDCDC" >
+                            <a href="tambah-kamera.php"><i class="fa fa-fw fa-plus-square-o"></i> Tambah Kamera</a>
+                        </li>
+                    </ul>
+            </li>
+            <li style="border-bottom: 1px solid #DCDCDC;">
+            	<a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-suitcase"></i> Aksesoris <i class="fa fa-fw fa-caret-down"></i></a>
+            		<ul id="demo1" class="collapse">
+            			<li style="border-bottom: 1px solid #DCDCDC;">
+            				<a href="data-aksesoris.php"><i class="fa fa-fw fa-archive"></i> Data Aksesoris </a>
+            			</li>
+            			<li style="border-bottom: 1px solid #DCDCDC">
+            				<a href="tambah-aksesoris.php"><i class="fa fa-fw fa-plus-square-o"></i> Tambah Aksesoris </a>
+            			</li>
+            		</ul>
+            </li>
+			<li style="border-bottom: 1px solid #DCDCDC;">
+				<a href="data-peminjaman.php"><i class="fa fa-fw fa-database"></i> Data Peminjaman</a>
 			</li>
 			<li style="border-bottom: 1px solid #DCDCDC;">
-				<a href="tambah-kamera.php"><i class="fa fa-md fa-cart-plus"></i> Tambah Data Kamera</a>
-			</li>
-			<li style="border-bottom: 1px solid #DCDCDC;">
-				<a href="data-peminjaman.php"><i class="fa fa-md fa-database"></i> Data Peminjaman</a>
-			</li>
-			<li style="border-bottom: 1px solid #DCDCDC;">
-				<a href="admin.php"><i class="fa fa-md fa-user-o"></i> Data Admin</a>
+				<a href="admin.php"><i class="fa fa-fw fa-user-o"></i> Data Admin</a>
 			</li>
 		</ul>
 	</div>
@@ -85,3 +101,4 @@
 	<div id="page-wrapper">
 		<div class="container-fluid">
 			<!-- Page Heading -->
+<script src="js/jquery.min.js"></script>

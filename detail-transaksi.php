@@ -5,18 +5,19 @@
 ?>
 <div class="detail-produk jarak">
     <center><h4>Detail Transaksi Anda</h4></center>
+    <br>
     <div class="container">
+        <div class="alert alert-info" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span>
+                Mohon Screenshot atau Foto untuk bukti bila anda sudah meminjam.
+        </div>
         <div class="panel panel-success">
             <div class="panel-heading">
                 <h3 class="panel-title">Detail Transaksi</h3>
             </div>
             <div class="panel-body">
                 <form class="form-horizontal">
-                    <div class="form-group">
-                        <label class="col-md-2 control-label">Id Peminjaman</label>
-                        <div class="col-md-8">
-                            <input type="text" class="form-control" readonly="readonly" value="<?php echo $data['id_peminjam'] ?>"></div>
-                    </div>
                      <div class="form-group">
                         <label class="col-md-2 control-label">No.Identitas</label>
                         <div class="col-md-3">
@@ -48,6 +49,11 @@
                             <input type="text" class="form-control" readonly="readonly" value="<?php echo $data['total_biaya'] ?>"></div>
                     </div>
                 </form>
+            </div>
+        </div>
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+                    <h5>Bila Ingin COD silahkan hubungi Ke Nomer atau mau tanya tanya: 083833349186</h5>
             </div>
         </div>
     </div>

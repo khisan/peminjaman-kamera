@@ -6,7 +6,8 @@
 		{
 			echo "<script>location='index.php';</script>";
 		}
-		$ambilkamera = $koneksi->query("SELECT * FROM kamera");
+		$ambilpeminjaman = $koneksi->query("SELECT * FROM data_peminjaman ORDER BY id_peminjam DESC LIMIT 3");
+		$ambiladmin = $koneksi->query("SELECT * FROM admin");
 ?>
 <div class="row">
 	<div class="col-lg-12">
@@ -20,7 +21,6 @@
 </div>
 <!-- /.row -->
 <div class="row">
-<pre><?php print_r($_SESSION); ?></pre>
 	<div class="col-lg-3 col-md-6">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
@@ -110,42 +110,52 @@
 		</div>
 	</div>
 </div>
-<!-- /.row -->
-<div class="col-md-8">
-	<div class="panel panel-default">
-		<!-- Default panel contents -->
-		<div class="panel-heading">Data Kamera</div>
-		<!-- Table -->
-		<table class="table table-bordered">
-		<?php $datakamera = $ambilkamera->fetch_assoc(); 
-		break;
-		?>
-		<tr class="isi-tabel">
-			<td>ID </td>
-			<td>Kamera</td>
-			<td>Harga</td>
-		</tr>
-		<tr class="isi-tabel">
-			<td><?php echo $datakamera ['id_kamera']; ?></td>
-			<td><?php echo $datakamera ['merk_kamera']; ?></td>
-			<td><?php echo $datakamera ['harga_kamera']; ?></td>
-		</tr>
-		</table>
-	</div>
-</div>
-<div class="col-md-4">
-	<div class="panel panel-default">
-		<!-- Default panel contents -->
-		<div class="panel-heading">Data Peminjaman</div>
-		<!-- Table -->
-		<table class="table table-bordered">
+<div class="col-lg-4" style="margin-top: 10px;">
+	<div class="panel panel-primary">
+		<div class="panel-heading">Data Admin</div>
+		<table class="table table-bordered table-justified">
 		<tr>
-			<td>Username <!-- <?php echo $data['username'] ?> --></td>
-			<td>Nama <!-- <?php echo $data['password'] ?> --></td>
+			<th>ID</th>
+			<th>Username</th>
+			<th>Nama Admin</th>
+			<th>Password</th>
 		</tr>
+		<?php while( $data=$ambiladmin->fetch_assoc()) { ?>
+		<tr class="isi-tabel">
+			<td><?php echo $data ['id_admin'] ?></td>
+			<td><?php echo $data ['username'] ?></td>
+			<td><?php echo $data ['nama'] ?></td>
+			<td><?php echo $data ['password'] ?></td>
+		</tr>
+		<?php } ?>
 		</table>
 	</div>
 </div>
-</div>
+<div class="col-lg-8" style="margin-top: 10px;">
+	<div class="panel panel-primary">
+		<div class="panel-heading">Data Peminjaman</div>
+		<table class="table table-bordered table-justified">
+		<tr>
+			<th>ID</th>
+			<th>Nama</th>
+			<th>Kontak</th>
+			<th>No Identitas</th>
+			<th>Tgl.Pinjam</th>
+			<th>Tgl.Selesai</th>
+			<th>Total Biaya</th>
+		</tr>
+		<?php while( $data=$ambilpeminjaman->fetch_assoc()) { ?>
+		<tr class="isi-tabel">
+			<td><?php echo $data ['id_peminjam'] ?></td>
+			<td><?php echo $data ['nama'] ?></td>
+			<td><?php echo $data ['kontak'] ?></td>
+			<td><?php echo $data ['no_identitas'] ?></td>
+			<td><?php echo $data ['tgl_peminjaman'] ?></td>
+			<td><?php echo $data ['tgl_selesai'] ?></td>
+			<td><?php echo $data ['total_biaya'] ?></td>
+		</tr>
+		<?php } ?>
+		</table>
+	</div>
 <!-- /#page-wrapper -->
 <?php include('footer.php'); ?>

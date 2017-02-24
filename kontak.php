@@ -4,26 +4,22 @@ include ('header.php');
 <div class="container">
 	<center>
 	<h3>Kontak Info</h3>
-	<br>
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	</p>
 	<div class="col-md-3">
 		<div class="kontak">
 			<i class="fa fa-mobile fa-4x"></i>
-			<h4>Phone : 0343-8764-9810</h4>
+			<h4>Kontak : 083-833-349-186</h4>
 		</div>
 	</div>
 	<div class="col-md-3">
 		<div class="kontak">
 			<i class="fa fa-globe fa-4x"></i>
-			<h4>Website : www.demolink.com</h4>
+			<h4>Website : www.sewacam.com</h4>
 		</div>
 	</div>
 	<div class="col-md-3">
 		<div class="kontak">
 			<i class="fa fa-envelope-open fa-4x"></i>
-			<h4>Email : mail(at)watches.com</h4>
+			<h4>Email : khisan8@gmail.com</h4>
 		</div>
 	</div>
 	<div class="col-md-3">

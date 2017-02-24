@@ -25,11 +25,6 @@ if (!isset($_SESSION['admin']))
     <div class="panel-body">
         <form class="form-horizontal" method="post" action="edit-admin.php?id=<?php echo $data ['id_admin']?>">
             <div class="form-group">
-                <label class="col-md-2 control-label">Id Admin</label>
-                <div class="col-md-8">
-                    <input type="text" class="form-control" readonly="readonly" placeholder="Auto Number Tidak Perlu Di isi!" name "id" value="<?php echo $data['id_admin'] ?>"></div>
-            </div>
-            <div class="form-group">
                 <label class="col-md-2 control-label">Username</label>
                 <div class="col-md-3">
                     <input type="text" class="form-control"  placeholder="Username" name="user" value="<?php echo $data['username'] ?>"></div>

@@ -37,7 +37,7 @@
 			<center>
 			<h3 class="judul-footer">Ikuti Kami</h3>
 			<p class="follow">
-				<a href=""><i class="fa fa-facebook-official fa-4x"></i></a><a href=""><i class="fa fa-twitter fa-4x"></i></a>
+				<a href="https://web.facebook.com/khisan.ihza.5"><i class="fa fa-facebook-official fa-2x"></i></a><a href="https://twitter.com/khisan8"><i class="fa fa-twitter fa-2x"></i></a>
 			</p>
 		</div>
 	</div>

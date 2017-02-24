@@ -25,11 +25,6 @@ if (!isset($_SESSION['admin']))
     <div class="panel-body">
         <form action="tambah-kamera.php" class="form-horizontal" method="post" enctype="multipart/form-data">
             <div class="form-group">
-                <label class="col-md-2 control-label">ID Kamera</label>
-                <div class="col-md-8">
-                    <input type="text" class="form-control" readonly="readonly" placeholder="Auto Number Tidak Perlu Di isi!" name="id"></div>
-            </div>
-            <div class="form-group">
                 <label class="col-md-2 control-label">Merk</label>
                 <div class="col-md-3">
                     <input type="text" class="form-control" placeholder="Merk" name="merk"></div>
@@ -37,7 +32,7 @@ if (!isset($_SESSION['admin']))
             <div class="form-group">
                 <label class="col-md-2 control-label">Tipe</label>
                 <div class="col-md-3">
-                    <input type="text" class="form-control" placeholder="Merk" name="tipe"></div>
+                    <input type="text" class="form-control" placeholder="Tipe" name="tipe"></div>
             </div>
             <div class="form-group">
                 <label class="col-md-2 control-label">Harga</label>

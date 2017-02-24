@@ -103,18 +103,18 @@ include('koneksi.php');
             <div class="form-group">
                 <label class="col-md-4 control-label">No.KTP</label>
                 <div class="col-md-5">
-                    <input class="form-control" placeholder="no ktp" name="no_identitas" required oninvalid="this.setCustomValidity('Input Angka 16 Digit')" oninput="setCustomValidity('')" pattern="[0-9]{16}">
+                    <input class="form-control" placeholder="no ktp" name="no_identitas" required oninvalid="this.setCustomValidity('Input Angka 16 Digit')" oninput="setCustomValidity('')" pattern="[0-9]{16}" type="number">
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">Nama</label>
                 <div class="col-md-5">
-                    <input type="text" class="form-control" placeholder="nama" name="nama" required></div>
+                    <input type="text" class="form-control" placeholder="nama" name="nama" type="text" pattern="[a-zA-Z]+" required="Input Huruf Saja"></div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">No.Telepon</label>
                 <div class="col-md-5">
-                    <input class="form-control" placeholder="no telepon" name="kontak" required oninvalid="this.setCustomValidity('Input No Hp')" oninput="setCustomValidity('')" pattern="^08[0-9]{9,}" ></div>
+                    <input class="form-control" placeholder="no telepon" name="kontak" required oninvalid="this.setCustomValidity('Input No Hp')" oninput="setCustomValidity('')" pattern="^08[0-9]{9,}" type="number" ></div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">Tanggal Mulai Peminjaman</label>

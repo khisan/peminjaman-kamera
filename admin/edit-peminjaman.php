@@ -24,11 +24,6 @@ if (!isset($_SESSION['admin']))
     </div>
     <div class="panel-body">
         <form class="form-horizontal" method="post" action="edit-peminjaman.php?id=<?php echo $data['id_peminjam'] ?>">
-            <div class="form-group">
-                <label class="col-md-2 control-label">Id Peminjaman</label>
-                <div class="col-md-8">
-                    <input type="text" class="form-control" readonly="readonly" value="<?php echo $data['id_peminjam'] ?>"></div>
-            </div>
              <div class="form-group">
                 <label class="col-md-2 control-label">No.Identitas</label>
                 <div class="col-md-3">

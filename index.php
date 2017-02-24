@@ -1,10 +1,12 @@
 <?php
 include ('header.php');
 include('koneksi.php');
-	$ambil = $koneksi->query("SELECT * FROM kamera WHERE id_kamera"); ?>
+	$ambil = $koneksi->query("SELECT * FROM kamera WHERE id_kamera"); 
+	$data1 = $ambil->fetch_assoc();
+	?>
 <div class="automatic-slider">
 	<ul>
-		<li><img src="img/slider/slider1.jpg"></li>
+		<li><a href="detail.php?id=<?php echo $data['id_kamera']; ?>"><img src="img/slider/slider1.jpg"></a></li>
 		<li><img src="img/slider/slider2.jpg"></li>
 		<li><img src="img/slider/slider3.jpg"></li>
 	</ul>

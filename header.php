@@ -33,9 +33,11 @@
 	}
 	.judul{
 		text-align: center;
+		margin-bottom: auto;
 	}
 	.keterangan{
 		text-align: center;
+		margin-bottom: auto;
 	}
 	.thumbnail {
 		padding: 15px;
@@ -71,7 +73,7 @@
 		color: whitesmoke;
 	}
 	.jarak{
-		margin: 90px 0px;
+		margin: 40px 0px;
 	}
 	.form{
 		margin: 90px 0px;
@@ -79,6 +81,9 @@
 	}
 	.form-group{
 		width: 100%;
+	}
+	.alert{
+		margin-right: 690px;
 	}
 	li a{
 		color: whitesmoke;
@@ -89,6 +94,7 @@
 	.follow a{
 		letter-spacing: 10px;
 		color: whitesmoke;
+		margin-left: 10px;
 		}
 	.footer-bottom{
 		background-color: #000;

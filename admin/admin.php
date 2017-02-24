@@ -17,15 +17,7 @@
 		</ol>
 	</div>
 </div>
-<div class="col-md-4">
-	<form>
-		<input type="text" placeholder="Cari nama User" class="form-control" style="margin-bottom: 4px;"></input>
-	</form>
-	<form>
-		<input type="submit" value="Cari Data" class="btn btn-primary"></input>
-		<input type="submit" value="Refresh" class="btn btn-success"></input>
-	</form>
-</div>
+
 <div class="col-lg-12" style="margin-top: 10px;">
 	<div class="panel panel-success">
 		<!-- Default panel contents -->

@@ -25,11 +25,6 @@ if (!isset($_SESSION['admin']))
     <div class="panel-body">
         <form class="form-horizontal" method="post" action="edit-kamera.php?id=<?php echo $data['id_kamera'] ?>" enctype="multipart/form-data">
             <div class="form-group">
-                <label class="col-md-2 control-label">ID Kamera</label>
-                <div class="col-md-8">
-                    <input type="text" class="form-control" readonly="readonly" placeholder="Auto Number Tidak Perlu Di isi!" name="id" value="<?php echo $data['id_kamera'] ?>"></div>
-            </div>
-            <div class="form-group">
                 <label class="col-md-2 control-label">Merk</label>
                 <div class="col-md-3">
                     <input type="text" class="form-control" placeholder="Merk" name="merk_kamera" value="<?php echo $data['merk_kamera'] ?>"></div>

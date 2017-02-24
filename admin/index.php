@@ -10,7 +10,7 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
 </head>
-<body style="background-color: #ececec">
+<body style="background-color: #fff">
 <?php 
 session_start();
 include ('koneksi.php');
