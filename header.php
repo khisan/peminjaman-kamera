@@ -24,6 +24,13 @@
  		background-image: url("img/body2.jpg");
  		border-bottom: 1px solid #fff;
 	}
+	/*.kategori {
+		color: black;
+		background-color: transparent;
+	}
+	.kategori a{
+		color: black;*/
+	}
 	.gambar-produk{
 		max-height: 300px;
 		text-align: center;
@@ -63,6 +70,9 @@
 		padding-bottom: 10px;
 		color: #ABB7B7;
 	}
+	.kategori{
+		text-align: right;
+	}
 	.pinjam{
 		margin: 30px 0px 0px 30px;
 	}
@@ -82,12 +92,15 @@
 	.form-group{
 		width: 100%;
 	}
-	.alert{
+	.info1{
 		margin-right: 690px;
 	}
-	li a{
+	.ui-datepicker {
+		background: #333;
+	}
+	/*li a{
 		color: whitesmoke;
-		}
+		}*/
 	a:hover, .follow a:hover{
 		color: black;
 	}
@@ -102,6 +115,7 @@
 	}
 	h4,h3.judul-footer{
 		font-family: "inconsolata";
+		color: white;
 	}
 	p.isi-footer{
 		font-family: "inconsolata";

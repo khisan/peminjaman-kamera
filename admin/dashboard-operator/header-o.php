@@ -34,7 +34,6 @@
 		}
 </style>
 <body>
-
 <div id="wrapper">
 	<!-- Navigation -->
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -51,7 +50,7 @@
 	<!-- Top Menu Items -->
 	<ul class="nav navbar-right top-nav">
 		<li class="dropdown">
-			<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i><b class="caret"></b></a>
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Admin <b class="caret"></b></a>
 			<ul class="dropdown-menu">
 				<li>
 					<a href="logout.php" action="logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>

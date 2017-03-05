@@ -3,6 +3,9 @@ include ('header.php');
 include('koneksi.php');
  	$ambil = $koneksi->query("SELECT * FROM kamera WHERE id_kamera='$_GET[id]'");
  	$data = $ambil->fetch_assoc();
+  $min = new DateTime();
+  $max = new DateTime();
+  $max->modify("+14 days");
 ?>
 <style type="text/css">
 	.img-detail img{width: 90%;}
@@ -73,7 +76,7 @@ include('koneksi.php');
                 echo "<div class='alert alert-info'>Maaf Stock Habis</div>";
             }
           ?>
-					<button type="button" name="pinjam" <?php if ($cekstock == '0'){ ?> disabled <?php   } ?> class="btn btn-success" data-toggle="modal" data-target="#myModal">Pinjam</button>
+					<button type="button" name="pinjam" <?php if ($cekstock == '0') { ?> disabled <?php } ?> class="btn btn-success" data-toggle="modal" data-target="#myModal">Pinjam</button>
 					</div>
 				</div>
 			</div>
@@ -94,7 +97,7 @@ include('koneksi.php');
         <h3 class="panel-title">Input Data Peminjam</h3>
     </div>
     <div class="panel-body">
-        <form class="form-horizontal" method="post">
+         <form class="form-horizontal" method="post" name="form" onSubmit="return validasi()">
             <div class="form-group">
                 <label class="col-md-4 control-label">ID Kamera</label>
                 <div class="col-md-8">
@@ -103,42 +106,57 @@ include('koneksi.php');
             <div class="form-group">
                 <label class="col-md-4 control-label">No.KTP</label>
                 <div class="col-md-5">
-                    <input class="form-control" placeholder="no ktp" name="no_identitas" required oninvalid="this.setCustomValidity('Input Angka 16 Digit')" oninput="setCustomValidity('')" pattern="[0-9]{16}" type="number">
+                    <input class="form-control" placeholder="no ktp" name="no_identitas" pattern="^(\d)(?!\1+$)\d{15}$" title="Angka KTP 16 digit">
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">Nama</label>
                 <div class="col-md-5">
-                    <input type="text" class="form-control" placeholder="nama" name="nama" type="text" pattern="[a-zA-Z]+" required="Input Huruf Saja"></div>
+                    <input type="text" class="form-control" placeholder="nama" name="nama" type="text" pattern="^[a-zA-Z ]+$" required="" title="Input Huruf Saja"></div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">No.Telepon</label>
                 <div class="col-md-5">
-                    <input class="form-control" placeholder="no telepon" name="kontak" required oninvalid="this.setCustomValidity('Input No Hp')" oninput="setCustomValidity('')" pattern="^08[0-9]{9,}" type="number" ></div>
+                    <input class="form-control" placeholder="no telepon" name="kontak" pattern="(08|628|62)[\s\)\-]*(\s|(\d){9,})" required="" title="Input No Telepon 11/12 digit"></div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">Tanggal Mulai Peminjaman</label>
                 <div class="col-md-5">
-                    <input type="date" class="form-control" placeholder="tgl mulai peminjaman" name="tgl_peminjaman" required=""></div>
+                    <input type="date" class="form-control" placeholder="tgl mulai peminjaman" name="tgl_peminjaman" required="" value="<?php echo date('Y-m-d'); ?>" readonly="readonly"></div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">Tanggal Selesai</label>
                 <div class="col-md-5">
-                    <input type="date" class="form-control" placeholder="lama peminjaman" name="tgl_selesai" required=""></div>
+                    <input type="date" class="form-control" placeholder="lama peminjaman" name="tgl_selesai" required="" min="<?php echo date("Y-m-d"); ?>" max=<?=$max->format("Y-m-d")?>> </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">Harga Kamera</label>
                 <div class="col-md-8">
                     <input type="text" class="form-control" name="harga_kamera" readonly="readonly" value="<?php echo $data ['harga_kamera'] ?>"></div>
-                     <input type="hidden" name="id" value="<?php echo $_POST['id']; ?>">
+                    <input type="hidden" name="id" value="<?php echo $_POST['id']; ?>">
             </div>
             <div class="modal-footer">
-        		<input type="submit" class="btn btn-danger" name="" value="Batal" data-dismiss="modal">
-        		<input type="submit" class="btn btn-primary" name="kirim" value="Kirim">
-        	</div>
+            <input type="submit" class="btn btn-danger" name="" value="Batal" data-dismiss="modal">
+            <input type="submit" class="btn btn-primary" name="kirim" value="Kirim">
+          </div>
         </form>
+        <!-- <script type="text/javascript">
+          function validasi(){
+            var namaValid = /^[a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z]*)*$/;
+            var nama = form.nama.value;
+            var pesan = '';
+
+            if (nama == '') {
+              pesan = 'Nama Tidak Boleh Kosong';
+            }
+
+            if (nama != '' && !nama.match(namaValid)) {
+              pesan += 'nama tidak valid';
+            }
+            return true
+          }
+      </script> -->
 		<?php 
-    
     if (isset($_POST['kirim'])) 
 		{ 
 			 $tgl_mulai = $_POST['tgl_peminjaman'];
@@ -166,3 +184,5 @@ include('koneksi.php');
 <?php
 include ('footer.php');
 ?>
+
+

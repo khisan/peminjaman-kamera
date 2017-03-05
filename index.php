@@ -12,7 +12,6 @@ include('koneksi.php');
 	</ul>
 </div>
 <div class="container">
-	<div class="row">
 		<div class="col-md-12">
 			<h3 class="header">Produk</h3>
 		</div>

@@ -12,7 +12,7 @@ if (!isset($_SESSION['level']))
 		<h1 class="page-header">Data Kamera <small>Administrator</small></h1>
 		<ol class="breadcrumb">
 			<li class="active">
-				<i class="fa fa-camera fa-md"></i> Data Kamera
+				<i class="fa fa-archive fa-md"></i> Data Aksesoris
 			</li>
 		</ol>
 	</div>
@@ -21,46 +21,42 @@ if (!isset($_SESSION['level']))
 	<form method="post" action="data-kamera.php">
 	</form>
 	<form action="data-kamera.php" method="post">
-		<input type="text" name="cari" class="form-control" style="margin-bottom: 4px;" placeholder='Cari Merk & Tipe Kamera' required />
+		<input type="text" name="cari" class="form-control" style="margin-bottom: 4px;" placeholder='Cari Nama & Harga Aksesoris' required />
 		<input type="submit" value="Cari Data" class="btn btn-primary"/>
-		<a href="data-kamera.php" class="btn btn-success">Refresh</a>
+		<a href="data-aksesoris.php" class="btn btn-success">Refresh</a>
 	</form>
 	<?php
 				 
-           $ambil="SELECT * FROM  kamera";
+           $ambil="SELECT * FROM  aksesoris";
             if(isset($_POST['cari']))
             {
 	         $cari=$_POST['cari'];
-	         $ambil="SELECT * FROM  kamera 
-	         where merk_kamera like '%$cari%'
-	         or tipe_kamera like '%$cari%'  ";
+	         $ambil="SELECT * FROM  aksesoris 
+	         where nama like '%$cari%'
+	         or harga like '%$cari%'  ";
             }
            $tampil=$koneksi->query($ambil);
     ?>
 </div>
 <div class="col-lg-12" style="margin-top: 10px;">
 	<div class="panel panel-success">
-		<div class="panel-heading">Data Kamera</div>
+		<div class="panel-heading">Data Aksesoris</div>
 		<table class="table table-bordered table-justified">
 		<tr>
-			<th>ID Kamera</th>
-			<th>Merk</th>
-			<th>Tipe</th>
+			<th>ID Aksesoris</th>
+			<th>Nama</th>
 			<th>Harga</th>
 			<th>Stock</th>
-			<th>Spesifikasi</th>
 			<th>Gambar</center></th>
 			<th>
 				<center>Tool</th>
 		</tr>
 		<?php while( $data=$tampil->fetch_assoc()) { ?>
 		<tr class="isi-tabel">
-			<td><?php echo $data ['id_kamera'] ?></td>
-			<td><?php echo $data ['merk_kamera'] ?></td>
-			<td><?php echo $data ['tipe_kamera'] ?></td>
-			<td>Rp.<?php echo number_format($data['harga_kamera'],0, ",", ".") ?> /1 hari</td>
-			<td><?php echo $data ['stock_kamera'] ?></td>
-			<td><?php echo $data ['deskripsi_singkat_kamera'] ?></td>
+			<td><?php echo $data ['id'] ?></td>
+			<td><?php echo $data ['nama'] ?></td>
+			<td>Rp.<?php echo number_format($data['harga'],0, ",", ".") ?> /1 hari</td>
+			<td><?php echo $data ['stock'] ?></td>
 			<td> <img src="../img/foto_produk/<?php echo $data['gambar'];?>" class="img-rounded" width="250" height="250" style="border: 1px solid #666;"></td>
 			<td>
 				<center><a href="edit-kamera.php?id=<?php echo $data['id_kamera'] ?>" class="btn btn-primary fa fa-edit"></a>

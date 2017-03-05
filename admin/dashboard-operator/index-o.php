@@ -22,8 +22,6 @@ session_start();
 //         header("Location:dashboard.php");
 //     }
 // }
-$ambil = $koneksi->query("SELECT * FROM admin WHERE id_admin");
-$data = $ambil->fetch_assoc();
 ?>
 <div class="container col-md-4 col-md-offset-4" style="margin-top: 10%">
             <br />
@@ -81,12 +79,12 @@ $data = $ambil->fetch_assoc();
                 			if ($row['level'] == "admin" && $level == "1") 
                             {
                                 echo "<div class='alert alert-info'>Login Sukses!</div>";
-                                echo "<meta http-equiv='refresh' content='1;url=dashboard.php'>";
+                                echo "<meta http-equiv='refresh' content='1;url=hal-dashboard.php'>";
                             }
                             else if ($row['level'] == "operator" && $level == "2") 
                             {
                                 echo "<div class='alert alert-info'>Login Sukses!</div>";
-                                echo "<meta http-equiv='refresh' content='1;url=dashboard.php'>";
+                                echo "<meta http-equiv='refresh' content='1;url=hal-dashboard-operator.php'>";
                             }
                             else
                             {

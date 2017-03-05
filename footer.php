@@ -50,6 +50,7 @@
 		 © 2016 TA . All Rights Reserved | Design by XII-RPL
 	</div>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src='js/jquery.validate.js'></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/unslider-min.js"></script>
 	<script>
@@ -59,6 +60,22 @@
 			nav: false
 		});
 	</script>
+	<script type="text/javascript">
+          function validasi(){
+            var namaValid = /^[a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z]*)*$/;
+            var nama = form.nama.value;
+            var pesan = '';
+
+            if (nama == '') {
+              pesan = 'Nama Tidak Boleh Kosong';
+            }
+
+            if (nama != '' && !nama.match(namaValid)) {
+              pesan += 'nama tidak valid';
+            }
+            return true
+          }
+    </script>
 	</body>
 	</body>
 	</html>

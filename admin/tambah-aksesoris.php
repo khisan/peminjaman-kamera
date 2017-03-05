@@ -9,29 +9,24 @@ if (!isset($_SESSION['level']))
 ?>
 <div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header">Produk <small>Administrator</small></h1>
+        <h1 class="page-header">Aksesoris <small>Administrator</small></h1>
         <ol class="breadcrumb">
             <li class="active">
-                <i class="fa fa-cart-plus fa-md"></i> Tambah Data Kamera
+                <i class="fa fa-cart-plus fa-md"></i> Tambah Data Aksesoris
             </li>
         </ol>
     </div>
 </div>
 <div class="panel panel-success">
     <div class="panel-heading">
-        <h3 class="panel-title">Input Data Produk</h3>
+        <h3 class="panel-title">Input Data Aksesoris</h3>
     </div>
     <div class="panel-body">
         <form action="tambah-kamera.php" class="form-horizontal" method="post" enctype="multipart/form-data">
             <div class="form-group">
-                <label class="col-md-2 control-label">Merk</label>
+                <label class="col-md-2 control-label">Nama</label>
                 <div class="col-md-3">
-                    <input type="text" class="form-control" placeholder="Merk" name="merk"></div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-2 control-label">Tipe</label>
-                <div class="col-md-3">
-                    <input type="text" class="form-control" placeholder="Tipe" name="tipe"></div>
+                    <input type="text" class="form-control" placeholder="Nama" name="merk"></div>
             </div>
             <div class="form-group">
                 <label class="col-md-2 control-label">Harga</label>
@@ -42,12 +37,6 @@ if (!isset($_SESSION['level']))
                 <label class="col-md-2 control-label">Stock</label>
                 <div class="col-md-3">
                     <input type="number" class="form-control" placeholder="Stock" name="stock"></div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-2 control-label">Spesifikasi</label>
-                <div class="col-md-4">
-                    <textarea class="form-control" name="spesifikasi" rows="5"></textarea>
-                </div>
             </div>
             <div class="form-group">
                 <label class="col-md-2 control-label">Gambar</label>

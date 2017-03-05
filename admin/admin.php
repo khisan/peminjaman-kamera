@@ -1,11 +1,15 @@
-<?php include('header.php'); 
-	  include('koneksi.php');
-	  session_start();
-	  	$ambil = $koneksi->query("SELECT * FROM admin");
-	  if (!isset($_SESSION['admin'])) 
-	  {
-	  	echo "<script>location='index.php';</script>";
-	  }
+<?php 
+include('header.php'); 
+include('koneksi.php');
+session_start();
+$ambil = $koneksi->query("SELECT * FROM admin");
+if (!isset($_SESSION['level'])) 
+{
+echo "<script>location='index.php';</script>"; 
+}
+?>
+<?php
+if ($_SESSION['level']=="admin") {
 ?>
 <div class="row">
 	<div class="col-lg-12">
@@ -43,9 +47,21 @@
 				</td>
 			</tr>
 			<?php } ?>
+			<tr class="isi-tabel2">
+				<?php while ($data = $ambil->fetch_assoc()) { ?>
+				<td><?php echo $data ['id_admin']; ?></td>
+				<td><?php echo $data ['username']; ?></td>
+				<td><?php echo $data ['password']; ?></td>
+				<td><?php echo $data ['nama']; ?></td>
+				<td>
+					<center><a href="edit-admin.php" class="btn btn-primary fa fa-edit"><!-- </a><a href="hapus-admin.php" class="btn btn-danger fa fa-trash-o"></a> -->
+				</td>
+			</tr>
+			<?php } ?>
 			</table>
 		</div>
 	</div>
 </div>
 </div>
+<?php } ?>
 <?php include('footer.php'); ?>

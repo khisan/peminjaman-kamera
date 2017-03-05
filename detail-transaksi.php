@@ -7,7 +7,7 @@
     <center><h4>Detail Transaksi Anda</h4></center>
     <br>
     <div class="container">
-        <div class="alert alert-info" role="alert">
+        <div class="alert alert-info info1">
             <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
             <span class="sr-only">Error:</span>
                 Mohon Screenshot atau Foto untuk bukti bila anda sudah meminjam.
