@@ -74,7 +74,7 @@
 		text-align: right;
 	}
 	.pinjam{
-		margin: 30px 0px 0px 30px;
+		text-align: center;
 	}
 	footer{
 		background-color: #141414;

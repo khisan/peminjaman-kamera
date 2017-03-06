@@ -3,6 +3,7 @@ include ('header.php');
 include('koneksi.php');
  	$ambil = $koneksi->query("SELECT * FROM kamera WHERE id_kamera='$_GET[id]'");
  	$data = $ambil->fetch_assoc();
+  // atur waktu
   $min = new DateTime();
   $max = new DateTime();
   $max->modify("+14 days");
@@ -25,48 +26,48 @@ include('koneksi.php');
 			<div class="col-md-6 detail">
 				<div>
 					<h3><?php echo $data ['merk_kamera']." ".$data['tipe_kamera']; ?></h3>
-					<table>
-					<tr>
 					<div class="panel panel-success">
   						<div class="panel-heading">Deskripsi</div>
-  						<div class="panel-body" style="text-align: justify;">
-    						<?php echo $data ['deskripsi_singkat_kamera']; ?>
+    						<div class="panel-body" style="text-align: justify;">
+      						<?php echo $data ['deskripsi_singkat_kamera']; ?>
+    						</div>
   						</div>
-						</div>
-					</tr>
-					<tr>
-						<td>
-							<p>
-								Merk : <?php echo  $data ['merk_kamera']; ?> 
-							</p>
-						</td>
-					</td>
-					</tr>
-						<td>
-							<p>
-								Tipe : <?php echo $data ['tipe_kamera']; ?> 
-							</p>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<p>
-								ID Produk : <?php echo $data ['id_kamera']; ?> 
-							</p>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<p>
-								Stock	: <?php echo $data ['stock_kamera']; ?> 
-							</p>
-						</td>
-					</tr>
-					</table>
-					<div class="col-md-6 col-md-offset-4">
-						<td class="kol-pinjam">
-					<h4>Harga Sewa</h4>
-					<P>Rp.<?php echo number_format($data['harga_kamera'],0, ",", ".")?> / 1 Hari</P>
+          <div class="col-md-6">
+            <table>
+  					<tr>
+  						<td>
+  							<p>
+  								Merk : <?php echo  $data ['merk_kamera']; ?> 
+  							</p>
+  						</td>
+  					</td>
+  					</tr>
+  						<td>
+  							<p>
+  								Tipe : <?php echo $data ['tipe_kamera']; ?> 
+  							</p>
+  						</td>
+  					</tr>
+  					<tr>
+  						<td>
+  							<p>
+  								ID Produk : <?php echo $data ['id_kamera']; ?> 
+  							</p>
+  						</td>
+  					</tr>
+  					<tr>
+  						<td>
+  							<p>
+  								Stock	: <?php echo $data ['stock_kamera']; ?> 
+  							</p>
+  						</td>
+  					</tr>
+  					</table>
+          </div>
+          <div class="col-md-6">
+            <div class="alert alert-danger">Maksimal Peminjaman 2 Minggu!</div>
+          </div>
+					<div class="col-md-6 pinjam">
           <!-- Cek Stock -->
           <?php
           $ambil3 = $koneksi->query("SELECT * FROM kamera WHERE id_kamera='$_GET[id]'");
@@ -122,7 +123,7 @@ include('koneksi.php');
             <div class="form-group">
                 <label class="col-md-4 control-label">Tanggal Mulai Peminjaman</label>
                 <div class="col-md-5">
-                    <input type="date" class="form-control" placeholder="tgl mulai peminjaman" name="tgl_peminjaman" required="" value="<?php echo date('Y-m-d'); ?>" readonly="readonly"></div>
+                    <input type="date" class="form-control" placeholder="tgl mulai peminjaman" name="tgl_peminjaman" required="" value="<?php date_default_timezone_set('Asia/Jakarta'); echo date('Y-m-d'); ?>" readonly="readonly"></div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">Tanggal Selesai</label>
