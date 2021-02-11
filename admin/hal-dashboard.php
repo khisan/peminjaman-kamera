@@ -1,6 +1,6 @@
 <?php 
-error_reporting(0);
 session_start();
+error_reporting(0);
 $koneksi = new mysqli("localhost","root","","ta");
 if (isset($_SESSION['level'])) 
 {

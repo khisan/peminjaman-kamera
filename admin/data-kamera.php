@@ -1,7 +1,7 @@
 <?php 
+session_start();
 include('header.php');
 include ('koneksi.php');
-session_start();
 if (!isset($_SESSION['level'])) 
 {
 	echo "<script>location='index.php';</script>";

@@ -1,7 +1,7 @@
 <?php
+session_start();
 include('header.php');
 include ('koneksi.php');
-session_start();
     $ambil = $koneksi->query("SELECT * FROM data_peminjaman  WHERE id_peminjam='$_GET[id]'");
     $data = $ambil->fetch_assoc();
 if (!isset($_SESSION['level'])) 

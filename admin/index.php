@@ -68,7 +68,7 @@ $data = $ambil->fetch_assoc();
 
                 		$ambil = $koneksi->query("SELECT * FROM admin WHERE username='$username' AND password='$password'");
                 		$cek = $ambil->num_rows;
-                		if ($cek == 0) 
+                		if ($cek === 0) 
                 		{
                 			echo "<div class='alert alert-danger'>Login Gagal!</div>";
                 			echo "<meta http-equiv='refresh' content='1;url=index.php'>";
@@ -80,18 +80,17 @@ $data = $ambil->fetch_assoc();
                              $_SESSION['level']=$row['level'];
                 			if ($row['level'] == "admin" && $level == "1") 
                             {
-                                echo "<div class='alert alert-info'>Login Sukses!</div>";
-                                echo "<meta http-equiv='refresh' content='1;url=dashboard.php'>";
-                            }
-                            else if ($row['level'] == "operator" && $level == "2") 
-                            {
+                                $_SESSION['username']=$row['username'];
+                                $_SESSION['level']=$row['level'];
                                 echo "<div class='alert alert-info'>Login Sukses!</div>";
                                 echo "<meta http-equiv='refresh' content='1;url=dashboard.php'>";
                             }
                             else
                             {
-                                echo '<div class="alert alert-danger">Login Gagal</div>';
-                                echo "<meta http-equiv='refresh' content='1;url=index.php'>";
+                                $_SESSION['username']=$row['username'];
+                                $_SESSION['level']=$row['level'];
+                                echo "<div class='alert alert-info'>Login Sukses!</div>";
+                                echo "<meta http-equiv='refresh' content='1;url=dashboard.php'>";
                             }
                 		}
                 	}

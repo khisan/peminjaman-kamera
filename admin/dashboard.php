@@ -1,10 +1,10 @@
 <?php 
+session_start();
 include('header.php');
 include('koneksi.php');
-session_start();
-if (!isset($_SESSION['level'])) 
+if (!isset($_SESSION['level']))
 {
-	echo "<script>location='index.php';</script>";
+	// echo "<script>location='index.php';</script>";
 }
 $ambilpeminjaman = $koneksi->query("SELECT * FROM data_peminjaman ORDER BY id_peminjam DESC LIMIT 3");
 $ambiladmin = $koneksi->query("SELECT * FROM admin");

@@ -79,17 +79,6 @@
                         </li>
                     </ul>
             </li>
-            <li style="border-bottom: 1px solid #DCDCDC;">
-            	<a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-suitcase"></i> Aksesoris <i class="fa fa-fw fa-caret-down"></i></a>
-            		<ul id="demo1" class="collapse">
-            			<li style="border-bottom: 1px solid #DCDCDC;">
-            				<a href="data-aksesoris.php"><i class="fa fa-fw fa-archive"></i> Data Aksesoris </a>
-            			</li>
-            			<li style="border-bottom: 1px solid #DCDCDC">
-            				<a href="tambah-aksesoris.php"><i class="fa fa-fw fa-plus-square-o"></i> Tambah Aksesoris </a>
-            			</li>
-            		</ul>
-            </li>
 			<li style="border-bottom: 1px solid #DCDCDC;">
 				<a href="data-peminjaman.php"><i class="fa fa-fw fa-database"></i> Data Peminjaman</a>
 			</li>
